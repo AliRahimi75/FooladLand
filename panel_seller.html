@@ -160,8 +160,35 @@ form.example::after {
     text-align: center; 
     vertical-align: middle;
 }
-  
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  /* padding: 12px 24px; */
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  text-align: center;
+  height: 200px;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 100000px;
+}
+
   </style>
+  <script type="text/javascript" src="/path/to/si.files.js"></script>
 </header>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -191,7 +218,7 @@ form.example::after {
     <li><a data-toggle="pill" href="#menu3">جستجو در محصولات</a></li>
   </ul><br><br>
 
-
+<hr style="border: 3px solid green; border-radius: 1px;">
   <!--All of contents-->
   <div class="tab-content">
     <div id="home" class="tab-pane fade row">
@@ -375,6 +402,50 @@ form.example::after {
 				</table>
 			</div>
 		 </div>	  
+	  <hr style="border: 3px solid lightgreen; border-radius: 1px;">
+	  <p>افزودن محصول جدید</p>
+         <div id="home" class="tab-pane row">
+			<div class="col-sm-3">
+				<!--<input type="file" class="file" id="avatar" name="avatar" accept="image/png, image/jpeg" data-buttonText="Your label here.">-->
+				<div class="container" style="padding: 0px; margin: 0px; width:90%">
+					<img src="product_images/sample.png" class="img-rounded" alt="sample image" style="width:100%">
+					<button class="btn" style="display:block;width:120px; height:30px;" onclick="document.getElementById('getFile').click()">آپلود تصویر</button>
+					<input type='file' id="getFile" style="display:none">
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<table class="table">
+					<thead>
+					  <tr>
+						<td style="text-direction:right;">مشخصات محصول:</td>
+						<td style="direction:rtl;"><div style="padding: 0px;"><input class="form-control" id="name" name="name" placeholder="نام محصول..." type="text" required></div></td>
+						<td style="direction:rtl;"><div style="padding: 0px;"><input class="form-control" id="dimension" name="dimension" placeholder="ابعاد محصول..." type="text" required></div></td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+					    <td><input class="form-control" id="brand" name="brand" placeholder="برند محصول ..." type="text" required></div></td>
+						<td><div style="padding: 0px;"><input class="form-control" id="source" name="source" placeholder="محل تحویل دهی ..." type="text" required></div></td>
+						<td><input class="form-control" id="city" name="city" placeholder="شهر مبدأ" type="text" required></div></td>
+					  </tr>      
+					  <tr class="danger">
+						<td><input class="form-control" id="manager" name="manager" placeholder="مدیر فروش ..." type="text" required></div></td>
+						<td><input class="form-control" id="email" name="email" placeholder="ایمیل ..." type="text" required></div></td>
+						<td><input class="form-control" id="phone_number" name="phone_number" placeholder="شماره تماس ..." type="text" required></div></td>
+					  </tr>
+					  <tr class="info">
+						<td><input class="form-control" id="quality" name="quality" placeholder="کیفیت ..." type="text" required></div></td>
+						<td><input class="form-control" id="certificate" name="certificate" placeholder="گواهینامه ..." type="text"></div></td>
+						<td><input class="form-control" id="stock" name="stock" placeholder="موجودی ..." type="text" required></div></td>
+					  </tr>
+					  <tr class="active">
+						<td colspan="2" class="tdEnglish"><font size="6"><input class="form-control" id="price" name="price" placeholder="قیمت هر کیلو ..." type="text" required></div></font></td>
+						<td><button type="button" class="btn btn-primary btn-block">ثبت محصول</button></td>
+					  </tr>
+					</tbody>
+				</table>
+			</div>
+		 </div>	
     </div>
 	
     <div id="menu2" class="tab-pane fade">
